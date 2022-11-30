@@ -10,6 +10,16 @@ export default defineConfig({
   build: {
     assetsDir: "resources",
   },
+  server: {
+    strictPort: true,
+    proxy: {
+      "/picam.io": {
+        target: "ws://papple.top",
+        ws: true,
+        changeOrigin: true,
+      },
+    },
+  },
   plugins: [
     vue(),
     VitePWA({

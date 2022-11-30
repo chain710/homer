@@ -194,6 +194,13 @@ export default {
     configurationNeeded: function () {
       return (this.loaded && !this.services) || this.configNotFound;
     },
+    shouldShowStreams: function () {
+      return (
+        this.config.streams &&
+        this.config.streams.items &&
+        this.config.streams.items.length > 0
+      );
+    },
   },
   created: async function () {
     this.buildDashboard();
