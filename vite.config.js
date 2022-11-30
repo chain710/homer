@@ -10,6 +10,15 @@ export default defineConfig({
   build: {
     assetsDir: "resources",
   },
+  server: {
+    proxy: {
+      "/ws": {
+        target: "ws://192.168.1.50",
+        ws: true,
+        changeOrigin: true,
+      },
+    },
+  },
   plugins: [
     vue(),
     VitePWA({
