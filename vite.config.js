@@ -11,9 +11,10 @@ export default defineConfig({
     assetsDir: "resources",
   },
   server: {
+    strictPort: true,
     proxy: {
-      "/ws": {
-        target: "ws://192.168.1.50",
+      "/picam.io": {
+        target: "ws://papple.top",
         ws: true,
         changeOrigin: true,
       },

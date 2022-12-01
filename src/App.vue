@@ -129,24 +129,6 @@
               />
             </div>
           </div>
-
-          <!-- Video streams -->
-          <div v-if="shouldShowStreams" class="columns is-multiline">
-            <h2 v-if="config.streams.name" class="column is-full group-title">
-              <i
-                v-if="config.streams.icon"
-                :class="['fa-fw', config.streams.icon]"
-              ></i>
-              {{ config.streams.name }}
-            </h2>
-            <VideoStream
-              v-for="(item, index) in config.streams.items"
-              :key="`service-${index}`"
-              :item="item"
-              :proxy="config.proxy"
-              :class="['column', `is-${12 / config.streams.columns}`]"
-            />
-          </div>
         </div>
       </div>
     </section>
@@ -177,7 +159,6 @@ import SettingToggle from "./components/SettingToggle.vue";
 import DarkMode from "./components/DarkMode.vue";
 import DynamicTheme from "./components/DynamicTheme.vue";
 import WebSearchInput from "./components/WebSearchInput.vue";
-import VideoStream from "./components/VideoStream.vue";
 
 import defaultConfig from "./assets/defaults.yml?raw";
 
@@ -194,7 +175,6 @@ export default {
     DarkMode,
     DynamicTheme,
     WebSearchInput,
-    VideoStream,
   },
   data: function () {
     return {
