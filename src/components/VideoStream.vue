@@ -1,7 +1,11 @@
 <template>
-  <div class="card" :class="item.class">
-    <p class="title">{{ item.name }}</p>
-    <video autoplay muted ref="player"></video>
+  <div class="mesage is-dark">
+    <div class="card" :class="item.class">
+      <div v-if="item.name" class="message-header is-dark">
+        <p>{{ item.name }}</p>
+      </div>
+      <video autoplay muted ref="player"></video>
+    </div>
   </div>
 </template>
 <script>
@@ -54,3 +58,22 @@ export default {
   },
 };
 </script>
+<style scoped>
+.container video {
+  display: block;
+}
+</style>
+
+<style lang="scss" scoped>
+@import "../../node_modules/bulma/bulma";
+.video-title {
+  color: var(--text-title);
+  font-size: 1.1em;
+  line-height: 1.2em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: bold;
+  padding: 0.75em 1em;
+}
+</style>
